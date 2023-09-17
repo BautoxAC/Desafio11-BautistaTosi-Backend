@@ -24,7 +24,10 @@
   },
   "scripts": {
     "dev": "nodemon -e yaml,js ./src/app.js --mode DEVELOPMENT",
-    "start": "node  ./src/app.js --mode PRODUCTION"
+    "start": "node  ./src/app.js --mode PRODUCTION",
+    "testCarts":"mocha ./test/Carts.test.js",
+    "testSessions":"mocha ./test/Sessions.test.js",
+    "testProducts":"mocha ./test/Products.test.js"
   },
   "type": "module",
   "engines": {

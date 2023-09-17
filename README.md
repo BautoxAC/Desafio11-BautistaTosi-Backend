@@ -39,6 +39,16 @@ Este proyecto es un API básica que sigue las consignas de la tercera preEntrega
 - En la colección de prueba de mongoDB
 
 
+### `npm run testCarts`
+-Inicia los tests de carts
+
+### `npm run testSessions`
+- inicia los tests de sessions
+
+### `npm run testProducts`
+- inicia los tests de products
+
+
 ## Documentación y listado de las Dependecias:
 
 1. [bcrypt](https://www.npmjs.com/package/bcrypt)
