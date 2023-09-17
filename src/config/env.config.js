@@ -7,7 +7,6 @@ program.parse()
 dotenv.config({
   path: program.opts().mode === 'DEVELOPMENT' ? './.env.development' : './.env.production'
 })
-
 export default {
   mongoUrl: process.env.MONGO_LINK,
   sessionSecret: process.env.SESSION_SECRET,

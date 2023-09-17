@@ -8,6 +8,7 @@ Este proyecto es un API básica que sigue las consignas de la tercera preEntrega
 - [x] GIT
 - [x] DotEnv
 
+
 ## Funcionalidades:
 - [x] Iniciar y registrar tu sesión
 - [x] Manejar tu carrito
@@ -23,11 +24,7 @@ Este proyecto es un API básica que sigue las consignas de la tercera preEntrega
 ```
 
 ## Esquema del DotEnv:
-- MONGO_LINK=
-- SESSION_SECRET=
-- CLIENT_ID=
-- CLIENT_SECRET=
-- PORT=
+- Se encuentran dos ejemplos de como son los dos nombres que utiliza la app para funcionar y sus variables necesarias
 
 ## Para iniciar el proyectocon nodeJS
 
