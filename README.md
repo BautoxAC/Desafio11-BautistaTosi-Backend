@@ -8,7 +8,6 @@ Este proyecto es un API básica que sigue las consignas de la tercera preEntrega
 - [x] GIT
 - [x] DotEnv
 
-
 ## Funcionalidades:
 - [x] Iniciar y registrar tu sesión
 - [x] Manejar tu carrito

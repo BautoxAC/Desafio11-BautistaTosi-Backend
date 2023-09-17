@@ -15,7 +15,7 @@ buttonSumbit.addEventListener('click', (e) => {
 })
 socket.on('message_created_back_to_front', (messages) => {
   listMessages.innerHTML = ''
-  for (const message of messages.data.reverse()) {
+  for (const message of messages.data.data.reverse()) {
     listMessages.innerHTML += `
         <li class="boxMessage">
             <p class="user">Usuario:${message.user}</p>

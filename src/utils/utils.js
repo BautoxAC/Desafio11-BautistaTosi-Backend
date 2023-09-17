@@ -2,8 +2,6 @@ import multer from 'multer'
 import { Server } from 'socket.io'
 import { logger } from './logger.js'
 import { ChatManagerDBService } from '../services/chat.service.js'
-import { CartManagerDBService } from '../services/carts.service.js'
-import { UserManagerDBService } from '../services/user.service.js'
 import config from '../config/env.config.js'
 import { __dirname } from './__dirname.js'
 // -------------MONGO------------------
@@ -49,8 +47,6 @@ export function connectSocketServer (httpServer) {
     console.log('cliente conectado')
     // vista /chat
     const MessageManager = new ChatManagerDBService()
-    const CartManager = new CartManagerDBService()
-    const userManager = new UserManagerDBService()
     socket.on('new_message_front_to_back', async (message, userName) => {
       try {
         await MessageManager.addMessage(message, userName)
@@ -60,23 +56,13 @@ export function connectSocketServer (httpServer) {
         socket.emit('message_created_back_to_front', newMessage(false, 'an error ocurred', ''))
       }
     })
-    // vista /products
-    socket.on('add_product_to_cart_front_to_back', async ({ idProduct, email }) => {
-      try {
-        const user = await userManager.getUserByUserName(email)
-        const { status } = await CartManager.addProduct(user.data.cart, idProduct)
-        socket.emit('add_product_to_cart_back_to_front', { status, cartId: user.data.cart })
-      } catch (e) {
-        socket.emit('add_product_to_cart_back_to_front', { status: 'failure', message: 'something went wrong :(', data: {} })
-      }
-    })
   })
 }
 // ------------ MONGO DB ------------------
 const { mongoUrl } = config
 export async function connectMongo () {
   try {
-    await connect(`${mongoUrl}`)
+    await connect(mongoUrl)
   } catch (e) {
     throw new Error('can not connect to the db')
   }
