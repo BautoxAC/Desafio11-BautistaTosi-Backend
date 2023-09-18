@@ -60,7 +60,6 @@ app.use(passport.session())
 // Execute SocketSever in Rute /realtimeserver
 connectSocketServer(httpServer)
 
-
 // Config Swagger
 const specs = swaggerJSDoc(swaggerOptions)
 

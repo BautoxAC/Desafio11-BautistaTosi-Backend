@@ -12,7 +12,7 @@ export class CartManagerDBService {
       const cartFindId = await CartManagerDAO.getCartById(id)
       const totalPrices = cartFindId.products.reduce((acc, pro) => acc + parseInt(pro.idProduct.price), 0)
       if (cartFindId) {
-        return newMessage('success', 'Found successfully', { products: [...cartFindId.products], totalPrices } || [])
+        return newMessage('success', 'Found successfully', { products: [...cartFindId.products], totalPrices, _id: cartFindId._id } || [])
       } else {
         CustomError.createError({
           name: 'Finding cart error',
