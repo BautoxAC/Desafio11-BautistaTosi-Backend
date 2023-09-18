@@ -28,7 +28,7 @@ export class ProductsAPIController {
 
   async newProduct (req, res) {
     const newProduct = req.body
-    const owner = req.session.user.email
+    const owner = req?.session?.user?.email || 'admin'
     const imageUrl = `/${req.file.originalname}`
     await list.addProduct(newProduct.title, newProduct.description, newProduct.price, imageUrl, newProduct.code, newProduct.stock, newProduct.category, owner)
     return res.redirect('/products')
