@@ -37,7 +37,6 @@ describe('ENDPOINT /auth', function () {
     this.timeout(5000)
     const response = await requester.get('/auth/perfil').set('Cookie', [userSession])
     const { status, _body } = response
-    console.log(_body.perfil)
     expect(status).to.equal(200)
     expect(_body).to.have.property('perfil')
     expect(_body.perfil).to.be.an('object')
