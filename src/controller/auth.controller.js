@@ -42,7 +42,6 @@ export class AuthController {
     if (!req.user) {
       return res.json({ error: 'something went wrong' })
     }
-    console.log(req)
     req.session.user = {
       _id: req.user._id,
       age: req.user.age,

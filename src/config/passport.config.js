@@ -57,7 +57,6 @@ export function iniPassPortLocalAndGithub () {
         try {
           const { email, firstName, lastName, age } = req.body
           const user = await userModel.findOne({ email: username })
-          console.log(user)
           if (user) {
             CustomError.createError({
               name: 'Registering a user Error',

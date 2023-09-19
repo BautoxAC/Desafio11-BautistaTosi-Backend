@@ -4,7 +4,7 @@ import { isUser, isYourCart } from '../middlewares/auth.js'
 export const cartsAPIRouter = express.Router()
 const CartsControllerRouting = new CartsController()
 
-cartsAPIRouter.get('/:cid', CartsControllerRouting.getCartById)
+cartsAPIRouter.get('/', CartsControllerRouting.getCartMycart)
 
 cartsAPIRouter.post('/', isUser, CartsControllerRouting.addCart)
 

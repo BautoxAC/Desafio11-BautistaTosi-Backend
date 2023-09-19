@@ -2,8 +2,8 @@ import { CartManagerDBService } from '../services/carts.service.js'
 import { newMessage } from '../utils/utils.js'
 const list = new CartManagerDBService()
 export class CartsController {
-  async getCartById (req, res) {
-    const Id = req.params.cid
+  async getCartMycart (req, res) {
+    const Id = req.session?.user?.cart
     return res.status(200).json(newMessage('success', 'carrito por id', await list.getCartById(Id)))
   }
 
