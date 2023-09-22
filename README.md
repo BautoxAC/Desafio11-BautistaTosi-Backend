@@ -38,15 +38,8 @@ Este proyecto es un API básica que sigue las consignas de la tercera preEntrega
 - Inicia el Servidor en [http://localhost:3000]
 - En la colección de prueba de mongoDB
 
-
-### `npm run testCarts`
--Inicia los tests de carts
-
-### `npm run testSessions`
-- inicia los tests de sessions
-
-### `npm run testProducts`
-- inicia los tests de products
+### `npm run testApp`
+-Inicia los tests de toda la app pedida por la entrega
 
 
 ## Documentación y listado de las Dependecias:
